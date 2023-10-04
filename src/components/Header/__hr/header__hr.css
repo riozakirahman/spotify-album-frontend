@@ -1,0 +1,9 @@
+.header__hr {
+  all: unset;
+  width: 122px;
+  height: 3px;
+  bottom: 0px;
+  right: -7px;
+  position: absolute;
+  background-color: black;
+}

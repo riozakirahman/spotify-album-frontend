@@ -1,0 +1,14 @@
+.header__user {
+  display: flex;
+  margin-right: 20px;
+  align-items: center;
+}
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+  .header__user {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+  }
+}

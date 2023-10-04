@@ -1,0 +1,16 @@
+.header__logo {
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 700;
+  margin: 0;
+  padding: 25px 0;
+  user-select: none;
+}
+.header__logo:hover {
+  color: #2f71e5;
+}
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+  .header__logo {
+    font-size: 20px;
+  }
+}

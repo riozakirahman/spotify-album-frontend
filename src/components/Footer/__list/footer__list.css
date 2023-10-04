@@ -1,0 +1,7 @@
+.footer__list {
+  list-style: none;
+  cursor: pointer;
+}
+.footer__list:hover {
+  color: #2f71e5;
+}

@@ -1,0 +1,11 @@
+.about__description {
+  width: 400px;
+  line-height: 30px;
+  font-weight: 500;
+}
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+  .about__description {
+    width: 320px;
+    font-size: 12px;
+  }
+}

@@ -1,13 +1,50 @@
+@import url("./vendor/font.css");
+@import url("./components/Header/Header.css");
+@import url("./components/Header/__logo/header__logo.css");
+@import url("./components/Header/__wrapperlist/header__wrapperlist.css");
+@import url("./components/Header/__list/header__list.css");
+@import url("./components/Header/__hr/header__hr.css");
+@import url("./components/Header/navigation/header__navigation.css");
+@import url("./components/Header/__button/header__button.css");
+@import url("./components/Header/__link/header__link.css");
+@import url("./components/Header/__hamburger/header__hamburger.css");
+@import url("./components/Header/__line/header__line.css");
+@import url("./components/Header/__wrapperlist/_mobile/header__wrapperlist_mobile.css");
+@import url("./components/Header/__login/header__login.css");
+@import url("./components/Header/__user/header__user.css");
+@import url("./components/Header/__logout/header__logout.css");
+@import url("./components/Header/__user-logo/header__user-logo.css");
+@import url("./components/Header/__user/_collapse/header__user_collapse.css");
+@import url("./components/Header/__wrapperlist/_mobile/_collapse/header__wrapperlist_mobile_collapse.css");
+@import url("./components/Header/__line/_active/header__line_active.css");
+@import url("./components/Footer/Footer.css");
+@import url("./components/Footer/__wrapperlist/footer__wrapperlist.css");
+@import url("./components/Footer/__list/footer__list.css");
+@import url("./components/Footer/__link/_socmed/footer__link_socmed.css");
+@import url("./components/About/About.css");
+@import url("./components/About/__title/about__title.css");
+@import url("./components/About/__button/about__button.css");
+@import url("./components/About/__description/about__description.css");
+@import url("./components/About/__button/_link/about__button_link.css");
+@import url("./components/Card/Card.css");
+@import url("./components/Card/__img/card__img.css");
+@import url("./components/Card/__wrapper/card__wrapper.css");
+@import url("./components/Card/__next/card__next.css");
+@import url("./components/Card/__genres/card__genres.css");
+@import url("./components/Main/Main.css");
+@import url("./components/Main/__title/main__title.css");
+@import url("./components/Card/__more/card__more.css");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

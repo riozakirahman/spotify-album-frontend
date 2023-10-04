@@ -1,0 +1,19 @@
+.card {
+  border: 1px solid white;
+  background-color: #f1f5f9;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 16px;
+  padding: 20px;
+}
+.card:hover {
+  transform: scale(1.1);
+  background-color: #2f71e5;
+  color: #fff;
+}
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+  .card {
+    width: 300px;
+  }
+}
