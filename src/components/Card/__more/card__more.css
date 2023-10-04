@@ -1,0 +1,13 @@
+.card__more {
+  /* position: absolute;
+  bottom: 10px;
+  right: 20px; */
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  color: #2f71e5;
+}
+.card:hover .card__more {
+  color: white;
+  font-weight: bold;
+}

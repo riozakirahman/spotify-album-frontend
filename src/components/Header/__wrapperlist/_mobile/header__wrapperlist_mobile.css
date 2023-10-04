@@ -1,0 +1,15 @@
+.header__wrapperlist_mobile {
+  display: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+  .header__wrapperlist_mobile {
+    display: flex;
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-50%);
+  }
+}

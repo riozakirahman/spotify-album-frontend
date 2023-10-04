@@ -1,0 +1,12 @@
+.card__img {
+  width: 350px;
+  height: 272px;
+  object-fit: contain;
+  /* object-position: center center; */
+}
+
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+  .card__img {
+    width: 250px;
+  }
+}

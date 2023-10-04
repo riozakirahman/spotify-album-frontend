@@ -1,0 +1,8 @@
+.header__link {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.header__link:hover {
+  color: #2f71e5;
+}

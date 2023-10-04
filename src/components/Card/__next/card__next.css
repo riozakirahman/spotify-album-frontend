@@ -1,0 +1,13 @@
+.card__next {
+  cursor: pointer;
+  /* padding: 0 40px; */
+  text-align: right;
+  display: block;
+  color: #2f71e5;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+  .card__next {
+    text-align: center;
+  }
+}

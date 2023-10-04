@@ -1,0 +1,7 @@
+.card__genres {
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Display ellipsis (...) for overflow */
+  max-width: 300px;
+  margin: 0 auto 10px auto;
+}
