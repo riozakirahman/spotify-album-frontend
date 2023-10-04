@@ -7,10 +7,14 @@ const Footer = () => {
     <footer className="footer">
       <ul className="footer__wrapperlist">
         <li className="footer__list">
-          <a className="footer__link">About</a>
+          <Link className="footer__link" to={"/"}>
+            About
+          </Link>
         </li>
         <li className="footer__list">
-          <a className="footer__link">Album</a>
+          <Link className="footer__link" to={"/artist"}>
+            Artist
+          </Link>
         </li>
       </ul>
       <ul className="footer__wrapperlist">

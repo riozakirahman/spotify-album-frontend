@@ -1,15 +1,12 @@
 .footer {
   user-select: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: 100%;
   padding: 15px 40px;
   display: flex;
   font: 12px;
   font-family: "Inter", sans-serif;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background-color: #f8f9fa;
   max-width: 1440px;
   box-sizing: border-box;
@@ -18,6 +15,7 @@
 @media screen and (min-width: 320px) and (max-width: 1279px) {
   .footer {
     flex-direction: column;
+    align-items: center;
     width: 320px;
     position: static;
   }

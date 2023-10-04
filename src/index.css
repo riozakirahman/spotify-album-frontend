@@ -34,6 +34,9 @@
 @import url("./components/Main/Main.css");
 @import url("./components/Main/__title/main__title.css");
 @import url("./components/Card/__more/card__more.css");
+@import url("./components/Preloader/Preloader.css");
+@import url("./components/Footer/__link/footer__link.css");
+@import url("./components/Preloader/__body/preloader__body.css");
 
 body {
   margin: 0;

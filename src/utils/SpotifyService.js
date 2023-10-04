@@ -5,9 +5,11 @@ class SpotifyService {
     setNextPage,
     url,
     artist,
-    setLoggedIn
+    setLoggedIn,
+    setIsLoading
   ) {
     try {
+      setIsLoading(true);
       const uri =
         url || "https://api.spotify.com/v1/me/top/artists?offset=0&limit=3";
       const response = await fetch(`${uri}`, {
@@ -31,11 +33,14 @@ class SpotifyService {
 
       const data = await response.json();
       if (artist) {
+        setIsLoading(false);
         setArtist([...artist, ...data.items]);
       } else {
+        setIsLoading(false);
         setArtist(data.items);
       }
       if (data.next !== null) {
+        setIsLoading(false);
         setNextPage(data.next);
       } else {
         setNextPage(null);
@@ -47,8 +52,9 @@ class SpotifyService {
     }
   }
 
-  static async fetchProfile(token, setUser, setLoggedIn) {
+  static async fetchProfile(token, setUser, setLoggedIn, setIsLoading) {
     try {
+      setIsLoading(true);
       const response = await fetch(`https://api.spotify.com/v1/me`, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -70,10 +76,12 @@ class SpotifyService {
       }
 
       const data = await response.json();
-      const dataString = JSON.stringify(data);
-      localStorage.setItem("user", dataString);
-      await setUser(data);
-      console.log("user", data);
+      if (data) {
+        setIsLoading(false);
+        const dataString = JSON.stringify(data);
+        localStorage.setItem("user", dataString);
+        await setUser(data);
+      }
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
@@ -92,11 +100,10 @@ class SpotifyService {
       }
     );
     const data = await response.json();
-    console.log(data);
+
     if (response.ok) {
       setLoggedIn(true);
       setToken(data.access_token);
-      console.log(data.access_token);
       localStorage.setItem("token", data.access_token);
       setRefToken(data.refresh_token);
       localStorage.setItem("reftoken", data.refresh_token);
@@ -136,7 +143,7 @@ class SpotifyService {
     );
 
     const data = await response.json();
-    console.log("dataRefreshed", data.access_token);
+
     localStorage.setItem("token", data.access_token);
     setToken(data.access_token);
   };

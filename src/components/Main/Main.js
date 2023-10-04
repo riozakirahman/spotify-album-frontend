@@ -14,6 +14,7 @@ const Main = ({
   refresh_token,
   setRefToken,
   setIsArtist,
+  setIsLoading,
 }) => {
   const [fetchToken, setFetchToken] = useState(false);
   const [nextPage, setNextPage] = useState();
@@ -60,9 +61,10 @@ const Main = ({
         setNextPage,
         null,
         null,
-        setLoggedIn
+        setLoggedIn,
+        setIsLoading
       );
-      SpotifyService.fetchProfile(token, setUser, setLoggedIn);
+      SpotifyService.fetchProfile(token, setUser, setLoggedIn, setIsLoading);
     }
   }, [token]);
 
@@ -134,7 +136,9 @@ const Main = ({
                 setArtist,
                 setNextPage,
                 nextPage,
-                artist
+                artist,
+                null,
+                setIsLoading
               );
             }}
           >

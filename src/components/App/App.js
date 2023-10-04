@@ -6,6 +6,7 @@ import About from "../About/About";
 import Main from "../Main/Main";
 import { useState, useEffect, useContext } from "react";
 import { LoggedContext } from "../../contexts/LoggedContext";
+import Preloader from "../Preloader/Preloader";
 function App() {
   const { setLoggedIn } = useContext(LoggedContext);
   const [code, setCode] = useState("");
@@ -13,6 +14,7 @@ function App() {
   const [refresh_token, setRefToken] = useState("");
   const [isAbout, setIsAbout] = useState(false);
   const [isArtist, setIsArtist] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <BrowserRouter>
       <Routes>
@@ -47,6 +49,8 @@ function App() {
                 setRefToken={setRefToken}
                 isArtist={isArtist}
               />
+              {isLoading && <Preloader />}
+
               <Main
                 code={code}
                 setCode={setCode}
@@ -55,6 +59,7 @@ function App() {
                 refresh_token={refresh_token}
                 setRefToken={setRefToken}
                 setIsArtist={setIsArtist}
+                setIsLoading={setIsLoading}
               />
               <Footer />
             </>

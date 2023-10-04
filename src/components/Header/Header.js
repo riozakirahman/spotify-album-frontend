@@ -42,7 +42,7 @@ const Header = ({
           </li>
           <li className="header__list">
             <NavLink className="header__link" to={"/artist"}>
-              Album's
+              Artist
             </NavLink>
             {isArtist && <hr className="header__hr" />}
           </li>
