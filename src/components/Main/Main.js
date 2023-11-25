@@ -5,6 +5,8 @@ import SpotifyService from "../../utils/SpotifyService";
 import { Card } from "../Card/Card";
 import { ArtistContext } from "../../contexts/ArtistContext";
 import { UserContext } from "../../contexts/UserContext";
+import { Link } from "react-router-dom";
+import spotify from "../../images/Spotify_Icon_RGB_Black.png";
 
 const Main = ({
   code,
@@ -119,6 +121,21 @@ const Main = ({
       <h1 className="main__title">
         {loggedIn ? "Top Artist" : "Login First ..."}
       </h1>
+      {loggedIn && artist && (
+        <Link
+          className="spotify__link"
+          to={"https://www.spotify.com/"}
+          target="_blank"
+        >
+          <img
+            src={spotify}
+            className="spotify__icon"
+            style={{ width: 70 }}
+          ></img>
+          <p>OPEN SPOTIFY</p>
+        </Link>
+      )}
+
       <div className="card__wrapper">
         {artist &&
           loggedIn &&
@@ -145,6 +162,20 @@ const Main = ({
             {">>"} Load More
           </p>
         </div>
+      )}
+      {loggedIn && artist && (
+        <Link
+          className="spotify__link"
+          to={"https://www.spotify.com/"}
+          target="_blank"
+        >
+          <img
+            src={spotify}
+            className="spotify__icon"
+            style={{ width: 70 }}
+          ></img>
+          <p>OPEN SPOTIFY</p>
+        </Link>
       )}
     </div>
   );

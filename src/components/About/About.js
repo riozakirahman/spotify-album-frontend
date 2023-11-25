@@ -6,7 +6,6 @@ const About = ({ setIsAbout }) => {
   const { loggedIn } = useContext(LoggedContext);
 
   useEffect(() => {
-    console.log(loggedIn);
     setIsAbout(true);
   }, []);
 
@@ -21,7 +20,7 @@ const About = ({ setIsAbout }) => {
         className="about__button"
         to={
           !loggedIn
-            ? "https://accounts.spotify.com/authorize?response_type=code&client_id=764799e75e0a4ad1be022cc0bd785fcf&redirect_uri=http://localhost:3000/artist&scope=user-top-read&show_dialog=true&state=3793644676"
+            ? "https://accounts.spotify.com/authorize?response_type=code&client_id=764799e75e0a4ad1be022cc0bd785fcf&redirect_uri=https://myartist.mooo.com/artist&scope=user-top-read&show_dialog=true&state=3793644676"
             : "/artist"
         }
       >

@@ -15,6 +15,7 @@ function App() {
   const [isAbout, setIsAbout] = useState(false);
   const [isArtist, setIsArtist] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -64,9 +65,7 @@ function App() {
               <Footer />
             </>
           }
-        >
-          {/* <Route path=":code" element={<Main />}></Route> */}
-        </Route>
+        ></Route>
       </Routes>
     </BrowserRouter>
   );

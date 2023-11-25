@@ -37,7 +37,9 @@
 @import url("./components/Preloader/Preloader.css");
 @import url("./components/Footer/__link/footer__link.css");
 @import url("./components/Preloader/__body/preloader__body.css");
-
+@import url("./components/Spotify/__logo/spotify__logo.css");
+@import url("./components/Spotify/__link/spotify__link.css");
+@import url("./components/Card/__spotify-link/card__spotify-link.css");
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

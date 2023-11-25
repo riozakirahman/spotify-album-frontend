@@ -1,0 +1,13 @@
+.spotify__link {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  gap: 10px;
+  width: 250px;
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}

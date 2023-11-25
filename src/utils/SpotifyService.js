@@ -45,8 +45,6 @@ class SpotifyService {
       } else {
         setNextPage(null);
       }
-
-      console.log(data);
     } catch (error) {
       console.error("Error fetching artist data:", error);
     }
@@ -88,35 +86,47 @@ class SpotifyService {
   }
 
   static async fetchToken(code, setLoggedIn, setToken, setRefToken, navigate) {
-    const response = await fetch(
-      `https://accounts.spotify.com/api/token?grant_type=authorization_code&code=${code}&redirect_uri=http://localhost:3000/artist`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          Authorization:
-            "Basic NzY0Nzk5ZTc1ZTBhNGFkMWJlMDIyY2MwYmQ3ODVmY2Y6OTQ2MWY3OGYzMGY5NDM3NDhiZDIxODZmMjBiOWNjMzM=",
-        },
+    try {
+      // const response = await fetch(
+      //   `https://accounts.spotify.com/api/token?grant_type=authorization_code&code=${code}&redirect_uri=https://myartist.mooo.com/artist`,
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/x-www-form-urlencoded",
+      //       Authorization:
+      //         "Basic NzY0Nzk5ZTc1ZTBhNGFkMWJlMDIyY2MwYmQ3ODVmY2Y6OTQ2MWY3OGYzMGY5NDM3NDhiZDIxODZmMjBiOWNjMzM=",
+      //     },
+      //   }
+      // );
+      const response = await fetch(
+        `https://accounts.spotify.com/api/token?grant_type=authorization_code&code=${code}&redirect_uri=http://localhost:3000/artist`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Authorization:
+              "Basic NzY0Nzk5ZTc1ZTBhNGFkMWJlMDIyY2MwYmQ3ODVmY2Y6OTQ2MWY3OGYzMGY5NDM3NDhiZDIxODZmMjBiOWNjMzM=",
+          },
+        }
+      );
+      const data = await response.json();
+
+      if (response.ok) {
+        setLoggedIn(true);
+        setToken(data.access_token);
+        localStorage.setItem("token", data.access_token);
+        setRefToken(data.refresh_token);
+        localStorage.setItem("reftoken", data.refresh_token);
       }
-    );
-    const data = await response.json();
 
-    if (response.ok) {
-      setLoggedIn(true);
-      setToken(data.access_token);
-      localStorage.setItem("token", data.access_token);
-      setRefToken(data.refresh_token);
-      localStorage.setItem("reftoken", data.refresh_token);
-    }
-
-    if (!response.ok) {
-      localStorage.removeItem("code");
-      localStorage.removeItem("token");
-      localStorage.removeItem("reftoken");
-      localStorage.removeItem("user");
-      setLoggedIn(false);
-      // navigate("/");
-    }
+      if (!response.ok) {
+        localStorage.removeItem("code");
+        localStorage.removeItem("token");
+        localStorage.removeItem("reftoken");
+        localStorage.removeItem("user");
+        setLoggedIn(false);
+      }
+    } catch (error) {}
   }
   static async exit(setToken, setCode, setLoggedIn, setRefToken, navigate) {
     await localStorage.removeItem("token");

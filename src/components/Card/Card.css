@@ -8,7 +8,7 @@
   padding: 20px;
 }
 .card:hover {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
   background-color: #2f71e5;
   color: #fff;
 }
