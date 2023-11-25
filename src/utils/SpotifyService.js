@@ -87,19 +87,8 @@ class SpotifyService {
 
   static async fetchToken(code, setLoggedIn, setToken, setRefToken, navigate) {
     try {
-      // const response = await fetch(
-      //   `https://accounts.spotify.com/api/token?grant_type=authorization_code&code=${code}&redirect_uri=https://myartist.mooo.com/artist`,
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/x-www-form-urlencoded",
-      //       Authorization:
-      //         "Basic NzY0Nzk5ZTc1ZTBhNGFkMWJlMDIyY2MwYmQ3ODVmY2Y6OTQ2MWY3OGYzMGY5NDM3NDhiZDIxODZmMjBiOWNjMzM=",
-      //     },
-      //   }
-      // );
       const response = await fetch(
-        `https://accounts.spotify.com/api/token?grant_type=authorization_code&code=${code}&redirect_uri=http://localhost:3000/artist`,
+        `https://accounts.spotify.com/api/token?grant_type=authorization_code&code=${code}&redirect_uri=https://myartist.mooo.com/artist`,
         {
           method: "POST",
           headers: {
@@ -109,6 +98,7 @@ class SpotifyService {
           },
         }
       );
+
       const data = await response.json();
 
       if (response.ok) {

@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && scp -r  -i /Users/riozakirahman/.ssh/id_ed25519 ./build/* riozakirahman@myartist.mooo.com:/home/riozakirahman/frontend"
   },
   "eslintConfig": {
     "extends": [
